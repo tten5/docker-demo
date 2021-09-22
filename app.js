@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
-const model = require ('./person.js')
+const model = require ('./models.js')
 
 // useful variables
 const app = express() 
@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080
 app.use(express.json())
 
 // connect to mongodb
-const dbUrl = process.env.MONGO_URL || "mongodb://localhost:27017/setGetServer"
+const dbUrl = process.env.MONGODB_CONNSTRING || "mongodb://localhost:27017/setGetServer"
 
 mongoose.connect(dbUrl,{
     useNewUrlParser: true,
