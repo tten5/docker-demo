@@ -1,0 +1,35 @@
+version: '3.2'
+services:
+  db:
+    container_name: mongodb
+    image: mongo:latest
+    ports: 
+      - "27017:27017"  
+    volumes:
+    - ./mongodb/mongod.conf:/etc/mongod.conf
+    # - ./mongodb/initdb.d/:/docker-entrypoint-initdb.d/
+    - ./mongodb/data/log/:/var/log/mongodb/
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    # assign the file to start mongod
+    command: ["-f", "/etc/mongod.conf"]
+  web: 
+    container_name: app_server
+    build: .
+    volumes: 
+      - ./node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:  
+      - 'mongodb'
+    env_file:
+      - .env
+    environment:
+      MONGO_URL: ${MONGO_URL}
+      
+volumes:
+  node_modules:
