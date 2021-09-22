@@ -1,5 +1,5 @@
 **docker-demo**
-- Learning how to set up docker with docker-compose
+- Learning how to set up docker images with docker-compose
 
 # API
 
