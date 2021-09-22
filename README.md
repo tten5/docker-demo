@@ -9,7 +9,7 @@
 # Manual
 
 **Prerequisite**
-- Docker
+- Install and run Docker
 
 **How to use**
 
