@@ -2,7 +2,7 @@
 - Learning how to set up docker images with docker-compose
 
 # API
-
+- port:3000
 - `/` ---> access form to register a person's information (name and age)
 - `/:name` ---> get information of a person based on their name
 
