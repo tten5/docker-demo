@@ -1,7 +1,7 @@
 FROM node:14
 
 # Any RUN, CMD, ADD, COPY, or ENTRYPOINT command will be executed in the specified working directory.
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # copy package.json to install dependencies first
 COPY ./package*.json ./
