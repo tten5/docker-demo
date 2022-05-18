@@ -18,5 +18,5 @@ services:
     environment:
       MONGODB_CONNSTRING: mongodb://mongodb:27017/setGetServer
       
-volumes:
-  node_modules:
+# volumes:
+#   node_modules:
