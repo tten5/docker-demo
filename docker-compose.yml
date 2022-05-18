@@ -8,8 +8,8 @@ services:
       - "27017:27017"  
   web: 
     container_name: app_server
-    # '.' represents the current directory in which
-    # docker-compose.yml is present.
+    # '.' represents the current directory in which docker-compose.yml is present.
+    # and this specifies the location of our Dockerfile
     build: .
     volumes: 
       - ./node_modules:/app/node_modules
